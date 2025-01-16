@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# LinkedIn Job Summariser Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solo project to build a simple extension that can evaluate job listings on the LinkedIn job's page and extract the necessary information regarding the role without having to read through the entire text. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+I was tired of reading endless job descriptions on LinkedIn, getting through the text only to find out my profile didn't match for some key reason. To save time I built this early prototype of a Chrome extension (also my first ever extension) in order to gather all the values I would need regarding the job and whether I should read the description fully or simply move on to the next listing. 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instructions
+1. Download the project, extract (if necessary) and store it somewhere suitable.
+2. Open Chrome, click the extensions button in the top right and choose "Manage Extensions"
+3. In the "chrome://extensions/" page select "Load Unpacked" in the top left.
+4. In the popup window find the downloaded project folder, navigate to the dist folder and select it.
+5. The extension only runs on the linkedin jobs domain and should appear in the top right as a fixed element. 
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Current Features
+This initial, very basic, iteration only contains the means to select the job title, company name and extract any sentence containing the term "English" for display.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Future Plans
+As the project progresses the aim is to add:
+ - listed skill requirements
+ - education level requirement
+ - user profile creation 
+   - receive user input to determine the values searchd for in each category
+   - they will also be able provide their personal own values to compare with the listing's
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+With more, less concrete concepts being considered when the existing extension is more fleshed out.
