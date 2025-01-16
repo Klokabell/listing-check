@@ -1,0 +1,61 @@
+"com/our-crafts
+
+Responsibilities
+
+
+Taking ownership of Merge Mansion’s economy for (new and existing) features, and designing and balancing features’ economy
+Analyzing the progression systems of the game and using data to optimize the game economy
+Developing predictive simulations to anticipate outcomes following content modifications
+Supporting fellow game designers in creating economies for new features
+Working together with Product Managers in translating high-level business metrics into game economy ones
+
+
+
+Requirements
+
+
+Several years of experience in game economy design
+A background in working with live mobile games
+Good grasp of game economy balancing in F2P games and its impact on game progression
+Experience in modeling the game economy of game features and simulating potential scenarios for different player segments
+Hands-on experience in A/B testing and a strong knowledge in spreadsheets
+Logical thinking and a systematic approach to solving problems, complemented nicely by your passion for working with numbers and analyzing data
+Basic understanding of analyzing key data with the ability to request certain visualization from the data team and comprehend statistical results
+
+
+
+In addition to these, it would be nice but not mandatory for you to have some of these as well:
+
+
+Previous experience with
+Data Analysis
+game design
+Unity
+
+
+
+What We Offer
+
+
+Workplace where we aim high, without taking ourselves too seriously
+Autonomy and accountability with support to foster professional development
+Great opportunities to grow with the company
+Work-life balance and strong emphasis on wellbeing
+Approachable leaders with low ego
+Flexible hybrid workplace where people enjoy working at the office
+
+
+
+Basics
+
+
+Location: Helsinki, Finland or Berlin, Germany
+Relocation: Relocating to Finland or Germany expected, full support provided
+Work model: Mix of office and remote work
+Working language: English
+
+
+
+Our equal opportunity statement
+
+To entertain hundreds of millions of people for decades, we need diverse teams that understand our diverse audiences"
