@@ -11,7 +11,17 @@ export const renderDisplay = (data: DisplayResultsProps) => {
   if (!data) return "no data to display";
   const title = data.title ?? "N/A";
   const company = data.company ?? "Unknown Company";
-  const languages = data.languages;
+  let language: string;
+  let displayExamples = false;
+  const examples: string[] = data.languages.examples;
+
+  if (examples[0] == "None") {
+    language = `Possibly ${data.languages.language}`;
+  } else {
+    language = "English";
+    displayExamples = true;
+  }
+
   return ` 
    <style>
     #my-extension-data {
@@ -20,7 +30,7 @@ export const renderDisplay = (data: DisplayResultsProps) => {
       border-radius: 5px;
       top: 0px;
       right: 0px;
-      width: 15%;
+      width: 20%;
       font-family: Arial, sans-serif;
       position: fixed;
       z-index: 999;
@@ -30,15 +40,31 @@ export const renderDisplay = (data: DisplayResultsProps) => {
     #my-extension-data .ext-listing{
       color:rgb(141, 198, 236)
     }   
-   #my-extension-data span {
+    #my-extension-data span {
       font-weight: bold;
       color:rgb(49, 130, 184)
+    }
+      
+    #my-extension-data ul {
+      font-size: 0.65em;
+      list-style-position: inside;
     }
   </style>
     <div id="my-extension-data">
       <h3 class="ext-listing"><span>Job Title:</span> ${title}</h3>
       <h3 class="ext-listing"><span>Company:</span> ${company}</h3>
-      <p class="ext-listing"><span>Languages:</span> ${languages}</p>
+      <h3 class="ext-listing"><span>Languages:</span> ${language}</p>
+      ${
+        displayExamples
+          ? `
+          <h3 class="ext-listing">
+          <span>Examples:</span>
+          <ul>
+              ${examples.map((example) => `<li>"${example}"</li>`).join("")}
+          </ul>
+          </h3>`
+          : ""
+      }
     </div>
     `;
 };

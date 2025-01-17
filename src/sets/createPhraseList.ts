@@ -1,0 +1,55 @@
+export const createPhraseList = (language: string): Set<string> => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  //const lowerLang = language.toLowerCase();
+  const langPhrases = new Set<string>();
+
+  const basePhrases = [
+    `Must be fluent in ${language}`,
+    `Excellent ${language} communication skills required`,
+    `Proficient in spoken and written ${language}`,
+    `Must have strong ${language} language skills`,
+    `Requires excellent written and verbal ${language} skills`,
+    `Fluency in ${language} is essential`,
+    `Native or near-native ${language} proficiency`,
+    `Must be comfortable communicating in ${language}`,
+    `${language} as a working language`,
+    `Business-level ${language} required`,
+    `Must be able to communicate effectively in ${language}`,
+    `Strong command of the ${language} language`,
+    `Must possess excellent ${language} communication skills`,
+    `Requires strong ${language} language proficiency`,
+    `Must be able to read, write, and speak ${language} fluently`,
+    `Excellent command of written and spoken ${language}`,
+    `Must have a good command of ${language}`,
+    `Working proficiency in ${language} is required`,
+    `Must be proficient in both written and oral ${language}`,
+    `Must be able to communicate clearly and concisely in ${language}`,
+    `Requires the ability to communicate effectively in ${language}`,
+    `Must have a strong understanding of the ${language} language`,
+    `${language} language proficiency is a must`,
+    `Must have excellent written and oral communication skills in ${language}`,
+    `Must be able to conduct business in ${language}`,
+    `Must be comfortable working in an ${language}-speaking environment`,
+    `${language} language skills are essential for this role`,
+    `Must have the ability to communicate effectively with ${language}-speaking clients`,
+    `Requires a high level of ${language} proficiency`,
+    `Must be able to present information clearly in ${language}`,
+    `Must be able to understand and respond to complex information in ${language}`,
+    `Must be able to write clear and concise reports in ${language}`,
+    `Must be able to participate actively in meetings conducted in ${language}`,
+    `Must be comfortable giving presentations in ${language}`,
+    `Must be able to negotiate effectively in ${language}`,
+    `Requires excellent interpersonal and communication skills in ${language}`,
+    `Must possess excellent communication skills with a focus on ${language}`,
+    `Must demonstrate excellent ${language} communication skills`,
+    `Must have demonstrated proficiency in ${language}`,
+    `Requires demonstrated proficiency in ${language}`,
+    `Must provide proof of ${language} proficiency (e.g., TOEFL, IELTS)`,
+    `${language} language testing may be required`,
+    `Must be willing to improve ${language} language skills if necessary`,
+    `Must be able to work with ${language}-language documentation`,
+    `Requires familiarity with ${language} business terminology`,
+  ];
+  basePhrases.forEach((phrase) => langPhrases.add(phrase));
+  return langPhrases;
+};

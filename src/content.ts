@@ -1,14 +1,11 @@
 //import ReactDOM from "react-dom/client";
 import { messageSender } from "./utilities/messageSender";
 import { renderDisplay } from "./utilities/renderDisplay";
-export const resultsObject: {
-  company: string;
-  title: string;
-  languages: string[];
-} = {
+import { DisplayResultsProps } from "./types/types";
+const resultsObject: DisplayResultsProps = {
   company: "",
   title: "",
-  languages: []!,
+  languages: { language: "", examples: [""] },
 };
 
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
