@@ -1,9 +1,12 @@
-export const messageSender = async (messageBody: string) => {
+export const messageSender = async (
+  contentText: string,
+  userLanguage: string
+) => {
   try {
     console.log("sending message to service worker");
     const response = await chrome.runtime.sendMessage({
       action: "sendingListingText",
-      messageBody,
+      messageBody: { contentText, userLanguage },
     });
     if (response) {
       console.log("background received listingText");

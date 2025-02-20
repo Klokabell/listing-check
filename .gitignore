@@ -27,3 +27,4 @@ dist-ssr
 #Project Files and Folders
 src/old/
 src/untested
+jest.config.js

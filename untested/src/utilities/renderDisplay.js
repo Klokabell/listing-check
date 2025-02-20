@@ -1,28 +1,29 @@
-import { DisplayResultsProps } from "../types/types";
-
-export const renderDisplay = (data: DisplayResultsProps) => {
-  let container = document.getElementById("extracted-job-data");
-  if (!container) {
-    container = document.createElement("div");
-    container.id = "extracted-job-data";
-    document.body.appendChild(container);
-  }
-  if (!data) return "no data to display";
-  const title = data.title ?? "N/A";
-  const company = data.company ?? "Unknown Company";
-  const location = data.location;
-  let language: string;
-  let displayExamples = false;
-  const examples: string[] = data.languages.examples;
-
-  if (examples[0] == "None") {
-    language = `Possibly ${data.languages.language}`;
-  } else {
-    language = "English";
-    displayExamples = true;
-  }
-
-  return ` 
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.renderDisplay = void 0;
+const renderDisplay = (data) => {
+    let container = document.getElementById("extracted-job-data");
+    if (!container) {
+        container = document.createElement("div");
+        container.id = "extracted-job-data";
+        document.body.appendChild(container);
+    }
+    if (!data)
+        return "no data to display";
+    const title = data.title ?? "N/A";
+    const company = data.company ?? "Unknown Company";
+    const location = data.location;
+    let language;
+    let displayExamples = false;
+    const examples = data.languages.examples;
+    if (examples[0] == "None") {
+        language = `Possibly ${data.languages.language}`;
+    }
+    else {
+        language = "English";
+        displayExamples = true;
+    }
+    return ` 
    <style>
     #my-extension-data {
       padding: 10px;
@@ -55,17 +56,16 @@ export const renderDisplay = (data: DisplayResultsProps) => {
       <h3 class="ext-listing"><span>Company:</span> ${company}</h3>
       <h3 class="ext-listing"><span>Languages:</span> ${language}</p>
       <h3 class="ext-listing"><span>Location:</span> ${location}</p>
-      ${
-        displayExamples
-          ? `
+      ${displayExamples
+        ? `
           <h3 class="ext-listing">
           <span>Examples:</span>
           <ul>
               ${examples.map((example) => `<li>"${example}"</li>`).join("")}
           </ul>
           </h3>`
-          : ""
-      }
+        : ""}
     </div>
     `;
 };
+exports.renderDisplay = renderDisplay;

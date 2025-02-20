@@ -6,5 +6,7 @@
   ],
   "compilerOptions": {
     "types": ["chrome-types"]
-  }
+  },
+  "include": ["tests/**/*"],
+  "exclude": ["node_modules", "old"]
 }
