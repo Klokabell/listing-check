@@ -6,7 +6,7 @@ import {
 export const filterCommunicationSentences = (
   sentenceArray: string[]
 ): string[] | null => {
-  console.log("filterCommunicationSentences input: ", sentenceArray);
+  //console.log("filterCommunicationSentences input: ", sentenceArray);
   const primaryTermsKeys = Object.keys(primaryLanguageTermRegexes);
   const secondaryTermsKeys = Object.keys(secondaryLanguageTermRegexes);
   let communicationSentences;
@@ -19,7 +19,7 @@ export const filterCommunicationSentences = (
     const communicationSentences: string[] | false = sentenceArray.filter(
       (sentence) => {
         const matchedSentences = termKey.some((term: string) => {
-          const cleanedSentence = sentence.replace(/\n/g, " ");
+          const cleanedSentence = sentence.replace(/\n/g, "");
           const regex = regexList[term];
 
           if (regex) {
@@ -32,16 +32,16 @@ export const filterCommunicationSentences = (
     );
     return communicationSentences;
   };
-  console.log("running primaryTermsKeys");
+  //console.log("running primaryTermsKeys");
   communicationSentences = filterByTerm(
     sentenceArray,
     primaryTermsKeys,
     primaryLanguageTermRegexes
   );
-  console.log("communicationSentences", communicationSentences);
+  //console.log("communicationSentences", communicationSentences);
   if (communicationSentences.length > 0) return communicationSentences;
   else {
-    console.log("running TermsKeys");
+    //console.log("running TermsKeys");
     communicationSentences = filterByTerm(
       sentenceArray,
       secondaryTermsKeys,

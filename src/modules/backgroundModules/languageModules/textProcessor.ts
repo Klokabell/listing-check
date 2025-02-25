@@ -36,14 +36,14 @@ export const textProcessor = (listingText: string, _userLanguage: string) => {
         }
       });
     }
-    console.log("filteredSentenceObject: ", filteredSentenceObject);
+    return filteredSentenceObject;
   } catch (error) {
     console.error(error);
     return [];
   }
 
   // Check for requirements
-/*   try {
+  /*   try {
     let reqObject: RequirementObject;
     languages?.forEach((language) => {
       if (communicationSentences) {

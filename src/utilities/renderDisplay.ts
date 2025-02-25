@@ -11,22 +11,15 @@ export const renderDisplay = (data: DisplayResultsProps) => {
   const title = data.title ?? "N/A";
   const company = data.company ?? "Unknown Company";
   const location = data.location;
-  let language: string;
-  let displayExamples = false;
-  const examples: string[] = data.languages.examples;
-
-  if (examples[0] == "None") {
-    language = `Possibly ${data.languages.language}`;
-  } else {
-    language = "English";
-    displayExamples = true;
-  }
+  const languagesObject = data.languages;
+  const languages = Object.keys(languagesObject);
+  console.log("languages: ", languages);
 
   return ` 
    <style>
-    #my-extension-data {
+    #display {
       padding: 10px;
-      background-color:rgb(36, 36, 36);
+      background-color:rgb(27, 31, 35);
       border-radius: 5px;
       top: 0px;
       right: 0px;
@@ -37,35 +30,72 @@ export const renderDisplay = (data: DisplayResultsProps) => {
     }
     
 
-    #my-extension-data .ext-listing{
-      color:rgb(141, 198, 236)
-    }   
-    #my-extension-data span {
+
+    #display h3 {
       font-weight: bold;
       color:rgb(49, 130, 184)
     }
       
-    #my-extension-data ul {
+    #display ul {
       font-size: 0.65em;
-      list-style-position: inside;
     }
+
+    .result-field#language_container span{
+      display: block;
+    }
+
+    .result-value{
+      font-size: 1vw;
+      white-space: nowrap;
+      color:rgba(255, 255, 255, 0.9);
+    }
+
+    .subfieldname {
+      font-size: 0.8em;
+    }
+
+    #span_examples {
+      color:rgba(255, 255, 255, 0.9);
+      font-size: 0.8em;
+      left: -10px;
+    }
+
+    li::marker {
+      font-size: 0.65em;
+    }
+
+
+
   </style>
-    <div id="my-extension-data">
-      <h3 class="ext-listing"><span>Job Title:</span> ${title}</h3>
-      <h3 class="ext-listing"><span>Company:</span> ${company}</h3>
-      <h3 class="ext-listing"><span>Languages:</span> ${language}</p>
-      <h3 class="ext-listing"><span>Location:</span> ${location}</p>
-      ${
-        displayExamples
-          ? `
-          <h3 class="ext-listing">
-          <span>Examples:</span>
-          <ul>
-              ${examples.map((example) => `<li>"${example}"</li>`).join("")}
-          </ul>
-          </h3>`
-          : ""
-      }
+    <div id="display">
+      <h3 class="result-field">Job Title:
+          <span class="result-value">${title}</span></h3>
+      <h3 class="result-field">Company:
+          <span class="result-value">${company}</span></h3>
+      <h3 class="result-field">Location:
+          <span class="result-value">${location}</span></h3>
+      <h3 class="result-field" id="language_container">Languages:
+          <span class="result-value">
+                ${
+                  languages
+                    ? languages
+                        .map(
+                          (languageName) => ` 
+                  ${languageName}:</span>
+                  <span class="subfieldname">Examples:</span>
+                    ${languagesObject[languageName]
+                      .map(
+                        (example) =>
+                          `<li id="span_examples">"${example.trim()}"</li>`
+                      )
+                      .join("")}
+                  `
+                        )
+                        .join("")
+                    : "Unknown Language"
+                }</span>
+</h3>
+
     </div>
     `;
 };

@@ -12,7 +12,7 @@ const locationSelector =
 const resultsObject: DisplayResultsProps = {
   company: "",
   title: "",
-  languages: { language: "", examples: [""] },
+  languages: {},
   location: "",
 };
 
@@ -25,7 +25,6 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
       console.log("resultsObject:", resultsObject);
       let container = document.getElementById("my-extension-data");
       if (!container) {
-        console.log("creating container");
         container = document.createElement("div");
         container.id = "my-extension-data";
         document.body.appendChild(container);

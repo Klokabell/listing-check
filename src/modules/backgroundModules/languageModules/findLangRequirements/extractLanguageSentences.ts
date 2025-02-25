@@ -3,13 +3,10 @@ import { languageUtilities } from "../../../../utilities/languageUtilities";
 export const extractLanguageSentences = (text: string) => {
   let languageNameArray;
   const languageObject: Record<string, string[]> = {};
-  console.log("running createSentenceArray");
 
   //determines which language name list to use
   try {
     languageNameArray = languageUtilities.selectLanguageNameArray(text);
-    if (languageNameArray)
-      console.log("languageNameArray: ", languageNameArray[0]);
   } catch (error) {
     if (error instanceof Error)
       if (error.message == "Language Cannot be Determined") {

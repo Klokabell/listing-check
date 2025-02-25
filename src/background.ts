@@ -8,9 +8,11 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   console.log("background received message", message);
   if (message.action === "sendingListingText") {
     const { contentText, userLanguage } = message.messageBody;
+
     if (contentText) {
       const languageResult = textProcessor(contentText, userLanguage);
-      if (languageResult && languageResult.length === 0) {
+
+      if (languageResult) {
         console.log("languageResult:", languageResult);
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
           if (tabs && tabs.length > 0) {
