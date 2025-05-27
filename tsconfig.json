@@ -1,0 +1,12 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "types": ["chrome-types"]
+  },
+  "include": ["tests/**/*"],
+  "exclude": ["node_modules", "old"]
+}

@@ -1,0 +1,193 @@
+#panel_container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 20px;
+  background-color: #1b1f23;
+  border-radius: 5px;
+  margin-top: 111px;
+  top: 0px;
+  right: 0px;
+  width: 18%;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  z-index: 999;
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: #536372;
+}
+.flexRow {
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: rgb(46, 53, 59);
+}
+
+.expansionField {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+#extension_container ul {
+  margin: 20px 2px;
+  padding: 0px 5px 10px 5px;
+}
+
+#company_container,
+#title_container,
+#location_container {
+  border-bottom: solid 1px #ffffff80;
+}
+.header {
+  display: block;
+  padding: 0;
+  color: #3d89bd;
+  cursor: pointer;
+  font-size: 2.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  position: relative;
+  caret-color: transparent;
+}
+
+label.header:hover {
+  background-color: rgb(45, 53, 61);
+  border-radius: 22px;
+}
+
+.result-value {
+  padding: 6px;
+  font-size: 1.8rem;
+  color: #ffffffe6;
+}
+
+/* List Styles and Logic */
+
+.expansionField .subheading {
+  font-weight: bold;
+  margin-top: 3%;
+}
+.subList_container {
+  margin-top: 2%;
+}
+
+.accordionList {
+  display: grid;
+  column-gap: 1px;
+  row-gap: 1px;
+  align-items: stretch;
+  background-color: #346b91bd;
+  list-style-type: none;
+}
+.accordionList li {
+  padding: 6px;
+  font-size: 0.8em;
+  background-color: #1b1f23;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.filler {
+  pointer-events: none;
+}
+
+/*grid-columns*/
+.one-col {
+  grid-template-columns: 1, 1fr;
+}
+.two-col {
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+}
+.three-col {
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+}
+
+/* Skills */
+
+.subList_container {
+  border-bottom: solid 1px;
+}
+#general_sub-container {
+  border-color: rgb(129, 199, 240);
+}
+#matching_sub-container {
+  border-color: rgba(63, 218, 158, 0.81);
+}
+#missing_sub-container {
+  border-color: rgb(207, 89, 20);
+}
+
+#general {
+  color: rgb(129, 199, 240);
+}
+#matching {
+  color: rgba(63, 218, 158, 0.81);
+}
+#missing {
+  color: rgb(207, 89, 20);
+}
+
+#general_list {
+  background-color: rgb(129, 199, 240);
+  border-color: rgb(129, 199, 240);
+}
+#matching_list {
+  background-color: rgba(63, 218, 158, 0.81);
+  border-color: rgba(63, 218, 158, 0.81);
+}
+#missing_list {
+  background-color: rgb(207, 89, 20);
+  border-color: rgb(207, 89, 20);
+}
+
+.span_examples {
+  color: rgba(255, 255, 255, 0.9);
+  left: -10px;
+}
+
+/* Languages */
+.subfield_name {
+  font-size: 0.8em;
+}
+#languages_examples {
+  font-size: 0.9em;
+}
+
+#languageAccordion .subList_container {
+  border: none;
+}
+
+/*  Accordion styling & logic   */
+
+.accordion_container {
+  display: flex;
+  gap: 15px;
+  max-height: 0;
+  flex-direction: column;
+  padding-left: 10px;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out, padding 0.3s ease-out;
+}
+.label_arrow {
+  display: inline-block;
+  transform: rotate(0deg);
+  font-size: 12px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.1s ease;
+}
+/* Rotate arrow when checkbox is checked */
+.header:has(+ .accordion_checkbox[type="checkbox"]:checked) .label_arrow {
+  transform: translateY(-50%) rotate(90deg); /* Rotate 90 degrees clockwise */
+}
+/* When checked reveal content */
+.accordion_checkbox[type="checkbox"]:checked ~ .accordion_container {
+  max-height: 500px; /* Adjust this to a value larger than your content */
+  padding-left: 10px;
+}
