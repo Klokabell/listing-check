@@ -1,4 +1,4 @@
-import { checkSourceRenderState } from "../../helpers/renderHelpers";
+import { checkSourceRenderState } from "../../rendering/renderHelpers";
 import { handleSourceRetrieval } from "./handleSourceRetrieval";
 import { SourceElementStateProxy } from "../../types/types";
 

@@ -1,10 +1,21 @@
-import { createListElement, insertElement } from "../helpers/renderHelpers";
+import {
+  insertCollapseSpan,
+  insertElement,
+  removeCollapseSpanText,
+} from "./renderHelpers";
+import { createListElement } from "./createListElement";
 import { accordionFields } from "../sharedData/stateObjects";
 
 export const renderSkills = (source: Element | NodeList) => {
+  const subspanId = "#skills-sub_span";
+
   let skillsDisplayString = null;
   let skillsDisplayList = null;
 
+  let subheadingSpanString = ``;
+  let matchingNum;
+  let missingNum;
+  removeCollapseSpanText(subspanId);
   // unsorted skills
   if (source instanceof Element) {
     const text = source.textContent?.trim().split(" · ");
@@ -19,15 +30,20 @@ export const renderSkills = (source: Element | NodeList) => {
     if (source.length > 1) {
       source.forEach((node, index) => {
         if (node instanceof HTMLElement === false) return null;
-        const anchorELement = node.querySelector(
+        const anchorElement = node.querySelector(
           "a.job-details-how-you-match__skills-item-subtitle"
         );
-        const anchorText = anchorELement?.textContent?.trim().split(",");
+        const anchorText = anchorElement?.textContent?.trim().split(",");
         let subField = null;
-        if (index == 0) subField = "matching";
-        if (index == 1) subField = "missing";
+        if (index == 0) {
+          subField = "matching";
+          matchingNum = anchorText?.length;
+        }
+        if (index == 1) {
+          subField = "missing";
+          missingNum = anchorText?.length;
+        }
         if (anchorText && subField != null) {
-          console.log(`${subField} anchorText: ${anchorText}`);
           innerTextArray.push(
             createListElement("skills", subField, anchorText)
           );
@@ -35,6 +51,8 @@ export const renderSkills = (source: Element | NodeList) => {
       });
       skillsDisplayList = innerTextArray.join("");
     }
+    subheadingSpanString = `<span class="collapsed_results" id="check"><span class="collapsed-icon">&#10003;</span>${matchingNum}</span>  <span class="collapsed_results" id="cross"><span class="collapsed-icon">&#10539;</span>${missingNum}</span>`;
+    insertCollapseSpan(subheadingSpanString, subspanId);
   }
   if (skillsDisplayList) {
     accordionFields.skills = true;
@@ -45,6 +63,7 @@ export const renderSkills = (source: Element | NodeList) => {
     `;
   }
   if (skillsDisplayString) {
+    console.log("skillsDisplayString: ", skillsDisplayString);
     insertElement("skills", skillsDisplayString);
     return true;
   } else return false;

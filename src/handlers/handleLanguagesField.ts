@@ -1,9 +1,6 @@
 import { messageSender } from "../utilities/messageSender";
-import {
-  createListElement,
-  createStringElement,
-  insertElement,
-} from "../helpers/renderHelpers";
+import { createStringElement, insertElement } from "../rendering/renderHelpers";
+import { createListElement } from "../rendering/createListElement";
 import { extractingListingText } from "../helpers/extractingListingText";
 import { accordionFields } from "../sharedData/stateObjects";
 

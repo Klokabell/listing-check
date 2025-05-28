@@ -1,4 +1,4 @@
-import { createStringElement } from "../helpers/renderHelpers";
+import { createStringElement } from "../rendering/renderHelpers";
 
 export const handleSimpleFields = (
   stringElement: Element,

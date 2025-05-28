@@ -1,3 +1,6 @@
+#panel_btn {
+}
+
 #panel_container {
   display: flex;
   flex-direction: column;
@@ -16,6 +19,7 @@
   border-bottom-style: solid;
   border-width: 2px;
   border-color: #536372;
+  font-size: 16px;
 }
 .flexRow {
   border-bottom-style: solid;
@@ -44,11 +48,14 @@
   padding: 0;
   color: #3d89bd;
   cursor: pointer;
-  font-size: 2.1rem;
+  font-size: 1.2em;
   font-weight: bold;
   transition: background-color 0.3s ease;
   position: relative;
   caret-color: transparent;
+}
+label.header {
+  margin-top: 3px;
 }
 
 label.header:hover {
@@ -57,8 +64,7 @@ label.header:hover {
 }
 
 .result-value {
-  padding: 6px;
-  font-size: 1.8rem;
+  font-size: 0.9em;
   color: #ffffffe6;
 }
 
@@ -66,7 +72,13 @@ label.header:hover {
 
 .expansionField .subheading {
   font-weight: bold;
+  font-size: 1em;
   margin-top: 3%;
+}
+
+.subheading_span {
+  margin-left: 10%;
+  font-size: 0.8em;
 }
 .subList_container {
   margin-top: 2%;
@@ -82,7 +94,7 @@ label.header:hover {
 }
 .accordionList li {
   padding: 6px;
-  font-size: 0.8em;
+  font-size: 0.6em;
   background-color: #1b1f23;
 
   display: flex;
@@ -131,6 +143,13 @@ label.header:hover {
   color: rgb(207, 89, 20);
 }
 
+#check {
+  color: rgba(63, 218, 158, 0.81);
+}
+#cross {
+  color: rgb(207, 89, 20);
+}
+
 #general_list {
   background-color: rgb(129, 199, 240);
   border-color: rgb(129, 199, 240);
@@ -172,6 +191,11 @@ label.header:hover {
   overflow: hidden;
   transition: max-height 0.1s ease-out, padding 0.3s ease-out;
 }
+
+.collapsed_results {
+  margin: 0 1%;
+}
+
 .label_arrow {
   display: inline-block;
   transform: rotate(0deg);
@@ -186,6 +210,11 @@ label.header:hover {
 .header:has(+ .accordion_checkbox[type="checkbox"]:checked) .label_arrow {
   transform: translateY(-50%) rotate(90deg); /* Rotate 90 degrees clockwise */
 }
+/*Hide the in-label results when checked*/
+.header:has(+ .accordion_checkbox[type="checkbox"]:checked) .collapsed_results {
+  display: none; /* This will hide the entire subheading span */
+}
+
 /* When checked reveal content */
 .accordion_checkbox[type="checkbox"]:checked ~ .accordion_container {
   max-height: 500px; /* Adjust this to a value larger than your content */

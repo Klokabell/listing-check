@@ -1,4 +1,4 @@
-import { clearRender, resetStateObjects } from "./renderHelpers";
+import { clearRender, resetStateObjects } from "../rendering/renderHelpers";
 import { handleMissingElements } from "../handlers/extraction/handleMissingElements";
 import { SourceElementStateProxy } from "../types/types";
 let sidebarListenerExists = false;
