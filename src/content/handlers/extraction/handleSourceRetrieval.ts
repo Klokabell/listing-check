@@ -1,5 +1,5 @@
-import { fieldKeyArray, sourceSelectors } from "../../sharedData/constants";
-import { SourceElementStateProxy } from "../../types/types";
+import { fieldKeyArray, sourceSelectors } from "../../../sharedData/constants";
+import { SourceElementStateProxy } from "../../../types/types";
 
 export const handleSourceRetrieval = (
   sourceElementStateProxy: SourceElementStateProxy

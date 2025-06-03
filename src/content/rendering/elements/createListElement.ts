@@ -1,4 +1,4 @@
-import { removeStartAnds } from "./renderHelpers";
+import { removeStartAnds } from "../../helpers/renderHelpers";
 
 export const createListElement = (
   field: string,

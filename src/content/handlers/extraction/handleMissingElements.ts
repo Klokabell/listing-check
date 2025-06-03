@@ -1,6 +1,6 @@
-import { checkSourceRenderState } from "../../rendering/renderHelpers";
+import { checkSourceRenderState } from "../../helpers/renderHelpers";
 import { handleSourceRetrieval } from "./handleSourceRetrieval";
-import { SourceElementStateProxy } from "../../types/types";
+import { SourceElementStateProxy } from "../../../types/types";
 
 export const handleMissingElements = async (
   sourceElementStateProxy: SourceElementStateProxy

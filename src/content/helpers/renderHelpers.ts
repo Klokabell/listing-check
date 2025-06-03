@@ -1,6 +1,6 @@
-import { fieldKeyArray } from "../sharedData/constants";
-import { isRendered, accordionFields } from "../sharedData/stateObjects";
-import { SourceElementStateProxy } from "../types/types";
+import { fieldKeyArray } from "../../sharedData/constants";
+import { isRendered, accordionFields } from "../../sharedData/stateObjects";
+import { SourceElementStateProxy } from "../../types/types";
 
 export const removeStartAnds = (text: string) => {
   const regex = new RegExp(`^and\\b\\s*`, "i");

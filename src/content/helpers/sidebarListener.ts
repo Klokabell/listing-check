@@ -1,6 +1,6 @@
-import { clearRender, resetStateObjects } from "../rendering/renderHelpers";
+import { clearRender, resetStateObjects } from "./renderHelpers";
 import { handleMissingElements } from "../handlers/extraction/handleMissingElements";
-import { SourceElementStateProxy } from "../types/types";
+import { SourceElementStateProxy } from "../../types/types";
 let sidebarListenerExists = false;
 
 export const sidebarListener = (

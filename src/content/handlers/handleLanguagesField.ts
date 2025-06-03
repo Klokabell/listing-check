@@ -1,8 +1,8 @@
-import { messageSender } from "../utilities/messageSender";
-import { createStringElement, insertElement } from "../rendering/renderHelpers";
-import { createListElement } from "../rendering/createListElement";
+import { messageSender } from "../../sharedUtilities/messageSender";
+import { createStringElement, insertElement } from "../helpers/renderHelpers";
+import { createListElement } from "../rendering/elements/createListElement";
 import { extractingListingText } from "../helpers/extractingListingText";
-import { accordionFields } from "../sharedData/stateObjects";
+import { accordionFields } from "../../sharedData/stateObjects";
 
 export const handleLanguagesField = async (
   element: Element,

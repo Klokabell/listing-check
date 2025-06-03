@@ -1,8 +1,8 @@
 import { handleSimpleFields } from "../handlers/handleSimpleFields";
 import { handleLanguagesField } from "../handlers/handleLanguagesField";
 import { handleSkillsField } from "../handlers/handleSkillsFIeld";
-import { SourceElementState } from "../types/interfaces";
-import { isRendered } from "../sharedData/stateObjects";
+import { SourceElementState } from "../../types/interfaces";
+import { isRendered } from "../../sharedData/stateObjects";
 
 export const createSourceElementProxy = (initialState: SourceElementState) => {
   let renderStateProxyHandler: ProxyHandler<SourceElementState> = {

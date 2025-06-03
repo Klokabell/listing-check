@@ -2,9 +2,9 @@ import {
   insertCollapseSpan,
   insertElement,
   removeCollapseSpanText,
-} from "./renderHelpers";
-import { createListElement } from "./createListElement";
-import { accordionFields } from "../sharedData/stateObjects";
+} from "../helpers/renderHelpers";
+import { createListElement } from "./elements/createListElement";
+import { accordionFields } from "../../sharedData/stateObjects";
 
 export const renderSkills = (source: Element | NodeList) => {
   const subspanId = "#skills-sub_span";
