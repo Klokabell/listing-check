@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "version": "0.4.0",
-  "name": "Linkedin Listing Check v1.4",
+  "name": "Linkedin Listing Check v0.4",
 
   "permissions": [
     "tabs",

@@ -16,7 +16,6 @@ export const createStringElement = (fieldText: string, field: string) => {
   if (field == "languages" || field == "skills") {
     accordion = accordionFields[field];
     if (!accordion) {
-      console.log(`${field} accordion state`, accordion);
       const anchor = document.getElementById(field + "_arrow");
       if (anchor) anchor.style.visibility = "hidden";
     }

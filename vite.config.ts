@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: "dist",
     rollupOptions: {
       input: {
-        content: "src/content.ts",
+        content: "src/content/content.ts",
         background: "src/background/background.ts",
       },
       output: {

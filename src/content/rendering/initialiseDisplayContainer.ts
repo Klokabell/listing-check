@@ -12,7 +12,7 @@ export const initialiseDisplayContainer = async () => {
   });
   const panelButton = collapseBtn("panel_collapse-btn");
   const panelWrapper = document.createElement("div");
-  panelWrapper.className = "panel-wrapper";
+  panelWrapper.id = "panel-wrapper";
   panelWrapper.appendChild(panelButton);
   panelWrapper.appendChild(fieldContainer);
   panelButton.addEventListener("click", () => {

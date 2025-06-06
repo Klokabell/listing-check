@@ -12,9 +12,9 @@ export const runExtension = async () => {
     const sourceElementStateProxy =
       createSourceElementProxy(sourceElementState);
     if (sourceElement) {
-      const panelContainer = document.getElementById("panel_container");
+      const panelContainer = document.getElementById("panel-wrapper");
       if (!panelContainer) {
-        console.log("creating panel container");
+        console.log("creating panel");
         await initialiseDisplayContainer();
       }
       sidebarListener(sourceElementStateProxy, isRendered);

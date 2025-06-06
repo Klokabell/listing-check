@@ -20,7 +20,6 @@ export const renderSkills = (source: Element | NodeList) => {
   if (source instanceof Element) {
     const text = source.textContent?.trim().split(" · ");
     if (text) {
-      console.log(`general text: ${text}`);
       skillsDisplayList = createListElement("skills", "general", text);
     }
   }
@@ -63,7 +62,6 @@ export const renderSkills = (source: Element | NodeList) => {
     `;
   }
   if (skillsDisplayString) {
-    console.log("skillsDisplayString: ", skillsDisplayString);
     insertElement("skills", skillsDisplayString);
     return true;
   } else return false;
