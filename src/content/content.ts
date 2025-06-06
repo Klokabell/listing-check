@@ -16,7 +16,8 @@ const handleMessage = (
     const injectedElement = document.getElementById("panel-wrapper");
     if (injectedElement) {
       injectedElement.remove();
-    }
+      sendResponse({ response: "panelRemoved" });
+    } else sendResponse({ response: "no panel" });
   }
 };
 chrome.runtime.onMessage.addListener(handleMessage);
