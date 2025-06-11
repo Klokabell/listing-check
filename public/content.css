@@ -238,7 +238,9 @@ label.header:hover {
 .collapsed_results {
   margin: 0 1%;
 }
-
+.collapsed_results.hideCollapse {
+  display: none;
+}
 .label_arrow {
   display: inline-block;
   transform: rotate(0deg);

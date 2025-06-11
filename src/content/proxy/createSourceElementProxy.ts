@@ -28,7 +28,6 @@ export const createSourceElementProxy = (initialState: SourceElementState) => {
             break;
         }
       }
-      console.log("isRendered", isRendered);
       return true;
     },
   };

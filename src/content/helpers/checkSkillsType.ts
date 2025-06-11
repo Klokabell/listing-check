@@ -4,13 +4,18 @@ export const checkSkillsType = (skillsContainer: Element) => {
   );
 
   if (sortedSkills && sortedSkills.length > 0) {
+    console.log("sortedSkills", sortedSkills);
     return sortedSkills;
   } else {
     const unsortedSkills = skillsContainer.querySelector(
       'a[data-test-app-aware-link=""]'
     );
     if (unsortedSkills) {
+      console.log("unsortedSkills", unsortedSkills);
       return unsortedSkills;
-    } else return null;
+    } else {
+      console.log("no skills element");
+      return null;
+    }
   }
 };

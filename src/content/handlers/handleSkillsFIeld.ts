@@ -1,4 +1,5 @@
 import { checkSkillsType } from "../helpers/checkSkillsType";
+import { createStringElement } from "../helpers/renderHelpers";
 import { renderSkills } from "../rendering/renderSkills";
 
 export const handleSkillsField = async (
@@ -8,7 +9,9 @@ export const handleSkillsField = async (
   if (skillsContainer == null) return;
 
   const skillsElement = checkSkillsType(skillsContainer);
-  if (skillsElement === null) return null;
+  if (skillsElement === null){
+    createStringElement("No Skills Element Found", "skills")
+  }
   else {
     const renderState = renderSkills(skillsElement);
     if (renderState) isRendered.skills = true;
