@@ -17,6 +17,8 @@ export const sourceSelectors: { [key: string]: string } = {
   skills: "#how-you-match-card-container",
 };
 
+export const jobApplicationClosedSpan = "artdeco-inline-feedback__message";
+
 export const destinationSelectors: { [key: string]: string } = {
   panel: "#panel_container",
   company: "#company_container",
