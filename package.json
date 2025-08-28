@@ -11,15 +11,11 @@
     "type": "module"
   },
   "dependencies": {
-    "@signaldb/core": "^1.5.4",
     "@types/langs": "^2.0.5",
     "eslint-plugin-react": "^7.37.4",
     "franc": "^6.2.0",
     "langs": "^2.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "underscore": "^1.13.7",
-    "usignal": "^0.9.0"
+    "react": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
