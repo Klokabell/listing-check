@@ -1,5 +1,8 @@
-# LinkedIn Job Listing Check Chrome Extension
+# Extract Linkedin Job Details
 
+### This is a Chrome Extension
+
+<br>
 
 ## In Brief
 A chrome extension that parses job listings on LinkedIn and extracts the key pieces of information about the role.
